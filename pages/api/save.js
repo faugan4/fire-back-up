@@ -1,13 +1,13 @@
 const fs=require("fs");
 var path = require('path');
-import getConfig from 'next/config'
+
 var uuid = require('uuid');
 const save=(req,res)=>{
     const body=req.body;
     const name=uuid.v4();
-    const { serverRuntimeConfig } = getConfig()
+    
 
-    let chemin=path.join(serverRuntimeConfig.PROJECT_ROOT, './public', `${name}.json`);
+    let chemin=path.resolve( './public', `${name}.json`);
     
     fs.writeFile(chemin,JSON.stringify({data:body}),(err)=>{
         if(err){

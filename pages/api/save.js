@@ -5,7 +5,7 @@ var uuid = require('uuid');
 const save=(req,res)=>{
     const body=req.body;
     const name=uuid.v4();
-    let chemin=path.join(__dirname,"../../public/"+name+"/json");
+    let chemin=path.join(__dirname,"../public/"+name+"/json");
     
     fs.writeFile(chemin,JSON.stringify({data:body}),(err)=>{
         if(err){

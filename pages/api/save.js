@@ -7,7 +7,7 @@ const save=(req,res)=>{
     const name=uuid.v4();
     
 
-    let chemin=path.resolve( './public', `${name}.json`);
+    let chemin=path.resolve( '../public', `${name}.json`);
     
     fs.writeFile(chemin,JSON.stringify({data:body}),(err)=>{
         if(err){

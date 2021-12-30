@@ -6,7 +6,7 @@ const save=(req,res)=>{
     fs.writeFile(`./public/${name}.json`,JSON.stringify({data:body}),(err)=>{
         if(err){
             console.log("there is an error",err);
-            res.status(200).json({error:"404"});
+            res.status(200).json({error:"404",err});
         }else{
             console.log("we are go on the sever",body)
             res.status(200).json({file:`${name}.json`});

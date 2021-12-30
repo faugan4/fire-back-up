@@ -95,6 +95,7 @@ const Export=()=>{
                 })
                 .then((res)=>{
                     const f=res.file;
+                    console.log("the res is ",res)
                     set_file(f);
                     btn.disabled=false;
                     btn.innerHTML="Export Now";
